@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion } from "motion/react";
 import { GitHubCalendar } from "react-github-calendar";
 
@@ -31,13 +31,22 @@ const GithubStatsCard = () => {
     following: 0,
   });
 
+  const getLastThreeMonths = (contributions: Contribution[]) => {
+    const now = new Date();
+    const threeMonthsAgo = new Date();
+    threeMonthsAgo.setMonth(now.getMonth() - 3);
+
+    return contributions.filter((item) => {
+      const date = new Date(item.date);
+      return date >= threeMonthsAgo && date <= now;
+    });
+  };
+
   const fetchGithubStats = async (URL: string) => {
     try {
       const response = await fetch(URL);
       const data = await response.json();
-      console.log("GitHub Stats Data:", data);
       setGithubData(data);
-      setLoading(false);
     } catch (error) {
       console.error("Error fetching GitHub stats:", error);
       setLoading(false);
@@ -59,43 +68,12 @@ const GithubStatsCard = () => {
     }
   };
 
-  const getLastThreeMonths = (contributions: Contribution[]) => {
-    const now = new Date();
-    const threeMonthsAgo = new Date();
-    threeMonthsAgo.setMonth(now.getMonth() - 3);
-
-    return contributions.filter((item) => {
-      const date = new Date(item.date);
-      return date >= threeMonthsAgo && date <= now;
-    });
-  };
-
   useEffect(() => {
     const GITHUB_STATS_URL =
       "https://github-contributions-api.jogruber.de/v4/krsnna-05";
     fetchGithubStats(GITHUB_STATS_URL);
     fetchUserStats("krsnna-05");
   }, []);
-
-  if (loading) {
-    return <div className="text-gray-400">Loading GitHub stats...</div>;
-  }
-
-  if (!githubData) {
-    return <div className="text-gray-400">Failed to load GitHub stats</div>;
-  }
-
-  // Get last 3 months of contributions
-  const lastThreeMonths = getLastThreeMonths(githubData.contributions);
-
-  // Group contributions by week (7 days per week)
-  const weeks: Contribution[][] = [];
-  for (let i = 0; i < lastThreeMonths.length; i += 7) {
-    weeks.push(lastThreeMonths.slice(i, i + 7));
-  }
-
-  // Reverse weeks to show right-to-left (most recent on the right)
-  const reversedWeeks = weeks.reverse();
 
   return (
     <motion.div
