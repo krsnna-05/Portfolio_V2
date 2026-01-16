@@ -59,17 +59,6 @@ const GithubStatsCard = () => {
     }
   };
 
-  const getColorForLevel = (level: number) => {
-    const colors = [
-      "bg-gray-800",
-      "bg-emerald-900",
-      "bg-emerald-700",
-      "bg-emerald-500",
-      "bg-emerald-300",
-    ];
-    return colors[level] || colors[0];
-  };
-
   const getLastThreeMonths = (contributions: Contribution[]) => {
     const now = new Date();
     const threeMonthsAgo = new Date();
@@ -113,9 +102,9 @@ const GithubStatsCard = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-black border border-white/25 rounded-lg p-6 w-fit m-5"
+      className="bg-black rounded-lg p-3 w-fit mt-2 mx-auto"
     >
-      <h3 className="text-white font-semibold mb-4">GitHub Contributions</h3>
+      <h3 className="text-white font-semibold mb-6">GitHub Contributions</h3>
 
       <GitHubCalendar
         username="krsnna-05"

@@ -42,13 +42,40 @@ const Me = () => {
   const isDayTime = time.hrs >= 6 && time.hrs < 18;
 
   return (
-    <div className="text-center">
-      <h1 className="text-lg font-light text-white">krsna</h1>
-      <p className="text-center mt-2 text-sm text-gray-500">
-        <TypingAnimation items={title} />
-      </p>
-      <p className="text-xs text-gray-600 mt-2">
-        {time.hrs}:{time.mins}:
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="text-center space-y-3"
+    >
+      {/* Title with reveal animation */}
+      <motion.div
+        initial={{ clipPath: "inset(0 100% 0 0)" }}
+        animate={{ clipPath: "inset(0 0% 0 0)" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="text-lg font-light text-white">krsna</h1>
+      </motion.div>
+
+      {/* Subtitle with staggered animation */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
+        <p className="text-center text-sm text-gray-500">
+          <TypingAnimation items={title} />
+        </p>
+      </motion.div>
+
+      {/* Time with fade and scale animation */}
+      <motion.p
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        className="text-xs text-gray-600"
+      >
+        {time.hrs}:{time.mins}
         <motion.span
           key={time.secs}
           initial={{ y: -10, opacity: 0 }}
@@ -57,11 +84,10 @@ const Me = () => {
           transition={{ duration: 0.2 }}
           className="inline-block"
         >
-          {time.secs}
+          :{time.secs}
         </motion.span>{" "}
         {isDayTime ? "☀️" : "🌙"} +5:30 UTC
-        <p className=" mt-2 text-base">Pune, India</p>
-      </p>
+      </motion.p>
 
       <p className=" flex justify-center gap-5 text-gray-500 mt-5">
         <LinkedinIcon
@@ -84,7 +110,7 @@ const Me = () => {
           }}
         />
       </p>
-    </div>
+    </motion.div>
   );
 };
 
