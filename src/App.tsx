@@ -11,7 +11,7 @@ const App = () => {
     <>
       <div className="flex flex-col md:flex-row min-h-screen">
         {/* Left Sidebar */}
-        <div className="w-full md:w-72 border-b md:border-b-0 md:border-r border-white/10 pb-4">
+        <div className="w-full md:w-72 md:border-b-0 md:border-r border-white/10 pb-4">
           {/* Navigation Bar (placeholder for user to add later) */}
           <div className="h-16 border-b border-white/10 flex items-center px-6 justify-between">
             <div className="flex flex-col">
