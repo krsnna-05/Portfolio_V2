@@ -15,7 +15,7 @@ const UserAvatar = () => {
         type: "spring",
       }}
     >
-      <Avatar className=" w-32 h-32 mx-auto">
+      <Avatar className=" w-24 h-24 mx-auto">
         <AvatarImage
           src="/avatar.jpg"
           alt="@shadcn"

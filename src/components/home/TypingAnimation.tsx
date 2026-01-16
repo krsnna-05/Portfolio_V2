@@ -66,7 +66,7 @@ export const TypingAnimation = ({
           initial={{ opacity: 0, scale: 0, rotate: -180 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           exit={{ opacity: 0, scale: 0, rotate: 180 }}
-          transition={{ duration: 1, type: "spring" }}
+          transition={{ duration: 0.5, type: "spring" }}
           className="inline-flex"
         >
           {currentItem.icon}
@@ -79,7 +79,7 @@ export const TypingAnimation = ({
             initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.5 }}
             className="inline-block"
           >
             {displayedText}
