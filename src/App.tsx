@@ -5,11 +5,12 @@ import "./index.css";
 import { Separator } from "./components/ui/separator";
 import GithubStatsCard from "./components/home/GithubStatsCard";
 import { motion } from "motion/react";
+import NavigationMenu from "./components/home/NavigationMenu";
 
 const App = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row min-h-screen">
+      <div className="flex flex-col md:flex-row min-h-screen pb-20 md:pb-0">
         {/* Left Sidebar */}
         <div className="w-full md:w-72 md:border-b-0 md:border-r border-white/10 pb-4">
           {/* Navigation Bar (placeholder for user to add later) */}
@@ -43,6 +44,8 @@ const App = () => {
           <GithubStatsCard />
 
           <Separator className="mt-4" />
+
+          <NavigationMenu />
         </div>
 
         {/* Vertical Separator */}
