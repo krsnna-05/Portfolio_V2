@@ -1,7 +1,16 @@
 import { TypingAnimation } from "./TypingAnimation";
-import { Coffee, Rocket, Sparkles, Zap } from "lucide-react";
+import {
+  Coffee,
+  GithubIcon,
+  LinkedinIcon,
+  MailIcon,
+  Rocket,
+  Sparkles,
+  Zap,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import { toast } from "sonner";
 
 const Me = () => {
   const title = [
@@ -34,7 +43,7 @@ const Me = () => {
 
   return (
     <div className="text-center">
-      <h1 className="text-lg font-light text-white">devkrsna</h1>
+      <h1 className="text-lg font-light text-white">krsna</h1>
       <p className="text-center mt-2 text-sm text-gray-500">
         <TypingAnimation items={title} />
       </p>
@@ -51,6 +60,29 @@ const Me = () => {
           {time.secs}
         </motion.span>{" "}
         {isDayTime ? "☀️" : "🌙"} +5:30 UTC
+        <p className=" mt-2 text-base">Pune, India</p>
+      </p>
+
+      <p className=" flex justify-center gap-5 text-gray-500 mt-5">
+        <LinkedinIcon
+          className="hover:text-white hover:-rotate-12 hover:scale-110 transition-all"
+          onClick={() => {
+            window.open("https://www.linkedin.com/in/krishnagavali/", "_blank");
+          }}
+        />
+        <GithubIcon
+          className="hover:text-white hover:-rotate-12 hover:scale-110 transition-all"
+          onClick={() => {
+            window.open("https://github.com/krsnna-05", "_blank");
+          }}
+        />
+        <MailIcon
+          className="hover:text-white hover:-rotate-12 hover:scale-110 transition-all"
+          onClick={() => {
+            toast.success("Email Copied To Clipboard");
+            navigator.clipboard.writeText("krishnagavali973@gmail.com");
+          }}
+        />
       </p>
     </div>
   );
