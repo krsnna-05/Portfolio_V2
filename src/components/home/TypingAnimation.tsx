@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { ReactNode } from "react";
+import { AnimatePresence } from "motion/react";
 
 interface TypingItem {
   text: string;
@@ -58,25 +59,40 @@ export const TypingAnimation = ({
   }, [displayedText, wordIndex, isDeleting, currentWord, typingSpeed, loopNum]);
 
   return (
-    <motion.span
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className={`inline-flex items-center gap-2 ${className}`}
-    >
-      {currentItem.icon && (
-        <span className="inline-flex">{currentItem.icon}</span>
-      )}
-      <span>
-        {displayedText}
+    <div className={`inline-flex items-center gap-2 ${className}`}>
+      <AnimatePresence mode="wait">
         <motion.span
-          animate={{ opacity: [1, 0] }}
-          transition={{ duration: 0.7, repeat: Infinity }}
-          className="ml-1"
+          key={`icon-${wordIndex}`}
+          initial={{ opacity: 0, scale: 0, rotate: -180 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          exit={{ opacity: 0, scale: 0, rotate: 180 }}
+          transition={{ duration: 1, type: "spring" }}
+          className="inline-flex"
         >
-          |
+          {currentItem.icon}
         </motion.span>
-      </span>
-    </motion.span>
+      </AnimatePresence>
+      <div className="relative">
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={`text-${wordIndex}`}
+            initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
+            transition={{ duration: 1 }}
+            className="inline-block"
+          >
+            {displayedText}
+            <motion.span
+              animate={{ opacity: [1, 0] }}
+              transition={{ duration: 0.7, repeat: Infinity }}
+              className="ml-1"
+            >
+              |
+            </motion.span>
+          </motion.span>
+        </AnimatePresence>
+      </div>
+    </div>
   );
 };
