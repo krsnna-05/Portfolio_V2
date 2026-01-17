@@ -9,9 +9,11 @@ import NavigationMenu from "./components/home/NavigationMenu";
 import AboutMe from "./components/aboutme/AboutMe";
 import ClickSpark from "./components/ClickSpark";
 import useNavigationStore from "./navigationStore";
+import Exp from "./components/exp/Exp";
+import Projects from "./components/projects/Projects";
 
 const App = () => {
-  const { state, setState } = useNavigationStore();
+  const { state } = useNavigationStore();
 
   return (
     <>
@@ -64,8 +66,10 @@ const App = () => {
           <div className="w-full md:ml-72 md:h-screen md:overflow-y-auto flex items-center justify-center">
             {state === "aboutme" ? (
               <AboutMe />
+            ) : state === "exp" ? (
+              <Exp />
             ) : (
-              <div className=" text-5xl">Experience</div>
+              <Projects />
             )}
           </div>
         </div>
