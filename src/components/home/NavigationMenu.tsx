@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import { UserIcon, BriefcaseIcon, Code2 } from "lucide-react";
 
 const NavigationMenu = () => {
-  const menus = ["Home", "About Me", "Experience", "Projects"];
+  const menus = [
+    { label: "About Me", icon: UserIcon },
+    { label: "Experience", icon: BriefcaseIcon },
+    { label: "Projects", icon: Code2 },
+  ];
   const [currentMenu, setCurrentMenu] = useState(0);
 
   return (
@@ -12,7 +17,7 @@ const NavigationMenu = () => {
         <div className="relative inline-flex flex-col gap-1 rounded-lg backdrop-blur w-full">
           {/* Animated background pill */}
           <motion.div
-            className="absolute inset-x-1 bg-white/10 rounded-md "
+            className="absolute inset-x-1 bg-white rounded-md "
             layoutId="nav-bg"
             initial={false}
             transition={{ type: "spring", stiffness: 380, damping: 30 }}
@@ -25,17 +30,18 @@ const NavigationMenu = () => {
           {/* Menu items */}
           {menus.map((menu, idx) => (
             <motion.button
-              key={menu}
+              key={menu.label}
               onClick={() => setCurrentMenu(idx)}
-              className={`relative px-4 py-2 text-sm font-light rounded-md transition-colors text-left ${
+              className={`relative px-4 py-2 text-sm font-light rounded-md transition-colors text-left flex items-center gap-2 ${
                 currentMenu === idx
-                  ? "text-white"
+                  ? "text-black"
                   : "text-gray-400 hover:text-gray-200"
               }`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              {menu}
+              <menu.icon size={16} />
+              {menu.label}
             </motion.button>
           ))}
         </div>
@@ -59,9 +65,9 @@ const NavigationMenu = () => {
           {/* Menu items */}
           {menus.map((menu, idx) => (
             <motion.button
-              key={menu}
+              key={menu.label}
               onClick={() => setCurrentMenu(idx)}
-              className={`relative flex-1 px-2 py-3 text-xs font-light rounded-md transition-colors text-center ${
+              className={`relative flex-1 px-2 py-3 text-xs font-light rounded-md transition-colors text-center flex flex-col items-center gap-1 ${
                 currentMenu === idx
                   ? "text-white"
                   : "text-gray-400 hover:text-gray-200"
@@ -69,7 +75,8 @@ const NavigationMenu = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              {menu}
+              <menu.icon size={16} />
+              {menu.label}
             </motion.button>
           ))}
         </div>
