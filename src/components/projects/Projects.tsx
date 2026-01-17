@@ -28,16 +28,23 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Project Name",
+      title: "FastForms",
       description:
-        "Brief description of what this project does and the problem it solves.",
+        "FastForm is an AI-powered tool that lets you create Google Forms using natural language prompts, removing the need for manual setup and repetitive clicks.",
       images: [
-        "/project2-1.jpg",
-        "/project2-2.jpg",
-        "/project2-3.jpg",
-        "/project2-4.jpg",
+        "/fastforms/home.png",
+        "/fastforms/dashboard.png",
+        "/fastforms/form.png",
       ],
-      technologies: ["React", "Node.js", "MongoDB"],
+      technologies: [
+        "Next.JS",
+        "ShadCN UI",
+        "AI SDK",
+        "Appwrite",
+        "Gemini API",
+        "Google Forms API",
+        "Ollama",
+      ],
       demoLink: "#",
       githubLink: "#",
     },
