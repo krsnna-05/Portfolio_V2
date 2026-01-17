@@ -62,7 +62,11 @@ const App = () => {
 
           {/* Right Content Area - Scrollable */}
           <div className="w-full md:ml-72 md:h-screen md:overflow-y-auto flex items-center justify-center">
-            {state === "aboutme" ? <AboutMe /> : <div className=""></div>}
+            {state === "aboutme" ? (
+              <AboutMe />
+            ) : (
+              <div className=" text-5xl">Experience</div>
+            )}
           </div>
         </div>
         <Toaster
