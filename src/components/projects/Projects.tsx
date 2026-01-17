@@ -100,7 +100,7 @@ const Projects = () => {
       </motion.div>
 
       {/* Projects Grid */}
-      <motion.div className="space-y-12" variants={itemVariants}>
+      <motion.div className="space-y-12 mb-12" variants={itemVariants}>
         {projects.map((project, idx) => (
           <motion.div key={idx} className="group" variants={itemVariants}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
@@ -200,6 +200,7 @@ const Projects = () => {
           </motion.div>
         ))}
       </motion.div>
+      <div className=" mt-10"></div>
 
       <GradualBlur />
     </motion.div>

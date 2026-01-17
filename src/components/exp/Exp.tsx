@@ -72,7 +72,7 @@ const Exp = () => {
     >
       {/* Hero Image */}
       <motion.img
-        src="/exp.png"
+        src="/exp.jpg"
         alt="Experience"
         className=" w-full aspect-4/1 rounded-xl mb-8 object-cover border border-white/20"
         style={{ objectPosition: "0px -260px" }}
