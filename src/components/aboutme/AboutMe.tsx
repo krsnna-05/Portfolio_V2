@@ -2,6 +2,7 @@ import { UserIcon, Code2Icon, Zap, Target } from "lucide-react";
 import React from "react";
 import { motion } from "motion/react";
 import PixelSnow from "../PixelSnow";
+import GradualBlur from "../GradualBlur";
 
 const AboutMe = () => {
   const containerVariants = {
@@ -29,7 +30,7 @@ const AboutMe = () => {
 
   return (
     <motion.div
-      className=" container h-full max-w-6xl p-5 pb-20"
+      className=" container h-full max-w-6xl p-5 pb-20 "
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -124,7 +125,6 @@ const AboutMe = () => {
             "Git",
             "Docker",
             "REST APIs",
-            "GraphQL",
             "AWS",
           ].map((tech, idx) => (
             <motion.div
@@ -157,7 +157,7 @@ const AboutMe = () => {
               of code I write is focused on delivering value to the end user.
             </p>
           </div>
-          <div className="flex gap-3 items-start">
+          <div className="flex gap-3 items-start pb-14">
             <div className="w-2 h-2 rounded-full bg-purple-400 mt-2 flex-shrink-0" />
             <p className="text-gray-300 font-light">
               <strong className="text-white">Continuous Growth:</strong> I'm
@@ -166,6 +166,7 @@ const AboutMe = () => {
           </div>
         </div>
       </motion.div>
+      <GradualBlur />
     </motion.div>
   );
 };

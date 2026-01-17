@@ -14,8 +14,8 @@ const App = () => {
     <>
       <ClickSpark>
         <div className="flex flex-col md:flex-row min-h-screen pb-20 md:pb-0 jetbrains-mono">
-          {/* Left Sidebar */}
-          <div className="w-full md:w-72 md:border-b-0 md:border-r border-white/10 pb-4 overflow-hidden">
+          {/* Left Sidebar - Fixed */}
+          <div className="w-full md:w-72 md:fixed md:left-0 md:top-0 md:h-screen md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:overflow-y-auto">
             {/* Navigation Bar (placeholder for user to add later) */}
             <div className="h-16 border-b border-white/10 flex items-center px-6 justify-between">
               <div className="flex flex-col">
@@ -52,10 +52,13 @@ const App = () => {
           </div>
 
           {/* Vertical Separator */}
-          <Separator orientation="vertical" className="hidden md:block" />
+          <Separator
+            orientation="vertical"
+            className="hidden md:block md:fixed md:left-72 md:top-0 md:h-screen"
+          />
 
-          {/* Right Content Area */}
-          <div className="w-full md:flex-1 flex items-center justify-center">
+          {/* Right Content Area - Scrollable */}
+          <div className="w-full md:ml-72 md:h-screen md:overflow-y-auto flex items-center justify-center">
             <AboutMe />
           </div>
         </div>
