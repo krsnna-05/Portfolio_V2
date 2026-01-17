@@ -87,6 +87,7 @@ const Me = () => {
           :{time.secs}
         </motion.span>{" "}
         {isDayTime ? "☀️" : "🌙"} +5:30 UTC
+        <p className=" text-base mt-3">Pune, India</p>
       </motion.p>
 
       <p className=" flex justify-center gap-5 text-gray-500 mt-5">

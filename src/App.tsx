@@ -8,8 +8,11 @@ import { motion } from "motion/react";
 import NavigationMenu from "./components/home/NavigationMenu";
 import AboutMe from "./components/aboutme/AboutMe";
 import ClickSpark from "./components/ClickSpark";
+import useNavigationStore from "./navigationStore";
 
 const App = () => {
+  const { state, setState } = useNavigationStore();
+
   return (
     <>
       <ClickSpark>
@@ -59,7 +62,7 @@ const App = () => {
 
           {/* Right Content Area - Scrollable */}
           <div className="w-full md:ml-72 md:h-screen md:overflow-y-auto flex items-center justify-center">
-            <AboutMe />
+            {state === "aboutme" ? <AboutMe /> : <div className=""></div>}
           </div>
         </div>
         <Toaster

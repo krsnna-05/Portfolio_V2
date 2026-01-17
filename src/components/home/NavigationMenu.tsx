@@ -1,14 +1,17 @@
-import { useState } from "react";
 import { motion } from "motion/react";
 import { UserIcon, BriefcaseIcon, Code2 } from "lucide-react";
+import useNavigationStore from "../../navigationStore";
 
 const NavigationMenu = () => {
+  const { state, setState } = useNavigationStore();
+
   const menus = [
-    { label: "About Me", icon: UserIcon },
-    { label: "Experience", icon: BriefcaseIcon },
-    { label: "Projects", icon: Code2 },
+    { label: "About Me", icon: UserIcon, key: "aboutme" },
+    { label: "Experience", icon: BriefcaseIcon, key: "exp" },
+    { label: "Projects", icon: Code2, key: "projects" },
   ];
-  const [currentMenu, setCurrentMenu] = useState(0);
+
+  const currentMenu = menus.findIndex((menu) => menu.key === state);
 
   return (
     <>
@@ -31,7 +34,7 @@ const NavigationMenu = () => {
           {menus.map((menu, idx) => (
             <motion.button
               key={menu.label}
-              onClick={() => setCurrentMenu(idx)}
+              onClick={() => setState(menu.key)}
               className={`relative px-4 py-2 text-sm font-light rounded-md transition-colors text-left flex items-center gap-2 ${
                 currentMenu === idx
                   ? "text-black"
@@ -66,7 +69,7 @@ const NavigationMenu = () => {
           {menus.map((menu, idx) => (
             <motion.button
               key={menu.label}
-              onClick={() => setCurrentMenu(idx)}
+              onClick={() => setState(menu.key)}
               className={`relative flex-1 px-2 py-3 text-xs font-light rounded-md transition-colors text-center flex flex-col items-center gap-1 ${
                 currentMenu === idx
                   ? "text-white"
