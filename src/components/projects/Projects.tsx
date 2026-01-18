@@ -49,30 +49,109 @@ const Projects = () => {
       githubLink: "#",
     },
     {
-      title: "Project Name",
+      title: "Feedback Collection and Analysis System : GHRCEM CS&DS",
       description:
-        "Brief description of what this project does and the problem it solves.",
+        "Feedback Collection System is a web-based platform used by a college department to create feedback forms in minutes, collect responses, visualize insights through charts, and export reports as PDFs.",
       images: [
         "/project2-1.jpg",
         "/project2-2.jpg",
         "/project2-3.jpg",
         "/project2-4.jpg",
       ],
-      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      technologies: [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "ShadCN UI",
+        "Appwrite",
+        "Vercel",
+      ],
       demoLink: "#",
       githubLink: "#",
     },
     {
-      title: "Project Name",
+      title: "KrishiSahayak",
       description:
-        "Brief description of what this project does and the problem it solves.",
+        "KrishiSahayak is an AI-based agricultural assistant that recommends suitable crops based on location, soil, and weather, and answers farmer queries through a chatbot using both cloud and local AI models.",
       images: [
         "/project3-1.jpg",
         "/project3-2.jpg",
         "/project3-3.jpg",
         "/project3-4.jpg",
       ],
-      technologies: ["Express", "PostgreSQL", "AWS"],
+      technologies: [
+        "React",
+        "TypeScript",
+        "Ollama",
+        "Node.js",
+        "Express",
+        "MongoDB",
+      ],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "TypeStrike",
+      description:
+        "TypeStrike is a real-time typing game that lets users test their typing speed in single-player mode, track past results, and compete in multiplayer rooms with up to four players.",
+      images: [
+        "/project3-1.jpg",
+        "/project3-2.jpg",
+        "/project3-3.jpg",
+        "/project3-4.jpg",
+      ],
+      technologies: [
+        "React",
+        "TypeScript",
+        "Socket.IO",
+        "Node.js",
+        "Express",
+        "MongoDB",
+      ],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "ForgeUpload",
+      description:
+        "ForgeUpload is a file upload system built to understand secure file handling, storage workflows, and backend validation, focusing on efficient and reliable upload management.",
+      images: [
+        "/project3-1.jpg",
+        "/project3-2.jpg",
+        "/project3-3.jpg",
+        "/project3-4.jpg",
+      ],
+      technologies: [
+        "React",
+        "TypeScript",
+        "ShadCN UI",
+        "Node.js",
+        "Express",
+        "Appwrite",
+        "Express",
+      ],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "Chitrush",
+      description:
+        "Chitrush is a real-time multiplayer card game supporting up to 8 players, built to strengthen backend logic and WebSocket-based communication for synchronized gameplay.",
+      images: [
+        "/project3-1.jpg",
+        "/project3-2.jpg",
+        "/project3-3.jpg",
+        "/project3-4.jpg",
+      ],
+      technologies: [
+        "React",
+        "TypeScript",
+        "Socket.IO",
+        "Node.js",
+        "Express",
+        "Redis",
+        "Upstash",
+      ],
       demoLink: "#",
       githubLink: "#",
     },
@@ -142,12 +221,7 @@ const Projects = () => {
                           alt={`${project.title} ${imgIdx + 2}`}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
-                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                          <Play
-                            size={20}
-                            className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                          />
-                        </div>
+                        {/* <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center"></div> */}
                       </div>
                     ))}
                   </div>
