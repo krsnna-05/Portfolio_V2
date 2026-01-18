@@ -1,6 +1,7 @@
 import { Code2Icon, Play, Github } from "lucide-react";
 import { motion } from "motion/react";
 import GradualBlur from "../GradualBlur";
+import useImgStore from "../../../imgStore";
 
 const Projects = () => {
   const containerVariants = {
@@ -25,6 +26,8 @@ const Projects = () => {
       },
     },
   };
+
+  const { setImgURL, setShowImgDialog } = useImgStore();
 
   const projects = [
     {
@@ -199,7 +202,8 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     onClick={() => {
-                      // Implement modal/lightbox here later
+                      setImgURL(project.images[0]);
+                      setShowImgDialog(true);
                     }}
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
@@ -213,7 +217,8 @@ const Projects = () => {
                         key={imgIdx}
                         className="relative overflow-hidden rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300 aspect-square cursor-pointer"
                         onClick={() => {
-                          // Implement modal/lightbox here later
+                          setImgURL(img);
+                          setShowImgDialog(true);
                         }}
                       >
                         <img
@@ -221,7 +226,6 @@ const Projects = () => {
                           alt={`${project.title} ${imgIdx + 2}`}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
-                        {/* <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center"></div> */}
                       </div>
                     ))}
                   </div>

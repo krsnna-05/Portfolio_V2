@@ -11,6 +11,8 @@ import ClickSpark from "./components/ClickSpark";
 import useNavigationStore from "./navigationStore";
 import Exp from "./components/exp/Exp";
 import Projects from "./components/projects/Projects";
+import { Dialog, DialogContent } from "./components/ui/dialog";
+import ImgViewer from "./components/ImgViewer";
 
 const App = () => {
   const { state } = useNavigationStore();
@@ -73,6 +75,7 @@ const App = () => {
             )}
           </div>
         </div>
+        <ImgViewer />
         <Toaster
           theme="dark"
           toastOptions={{
