@@ -12,7 +12,7 @@ const ImgViewer = () => {
       <DialogContent
         className={`border-0 bg-black/90 shadow-2xl p-0 ${
           isFullscreen
-            ? "max-w-none w-screen h-screen rounded-none"
+            ? " w-screen h-screen rounded-none"
             : "max-w-4xl w-[95vw] h-auto rounded-xl"
         }`}
       >
