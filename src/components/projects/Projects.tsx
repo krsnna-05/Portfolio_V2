@@ -56,10 +56,9 @@ const Projects = () => {
       description:
         "Feedback Collection System is a web-based platform used by a college department to create feedback forms in minutes, collect responses, visualize insights through charts, and export reports as PDFs.",
       images: [
-        "/project2-1.jpg",
-        "/project2-2.jpg",
-        "/project2-3.jpg",
-        "/project2-4.jpg",
+        "/csds_feedback/csds_dashboard.jpg",
+        "/csds_feedback/csds_analytics.jpg",
+        "/csds_feedback/csds_users.jpg",
       ],
       technologies: [
         "React",
