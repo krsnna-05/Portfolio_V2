@@ -96,12 +96,7 @@ const Projects = () => {
       title: "TypeStrike",
       description:
         "TypeStrike is a real-time typing game that lets users test their typing speed in single-player mode, track past results, and compete in multiplayer rooms with up to four players.",
-      images: [
-        "/project3-1.jpg",
-        "/project3-2.jpg",
-        "/project3-3.jpg",
-        "/project3-4.jpg",
-      ],
+      images: ["/typestrike/multiplayer.png", "/typestrike/singleplayer.png"],
       technologies: [
         "React",
         "TypeScript",
@@ -117,12 +112,7 @@ const Projects = () => {
       title: "ForgeUpload",
       description:
         "ForgeUpload is a file upload system built to understand secure file handling, storage workflows, and backend validation, focusing on efficient and reliable upload management.",
-      images: [
-        "/project3-1.jpg",
-        "/project3-2.jpg",
-        "/project3-3.jpg",
-        "/project3-4.jpg",
-      ],
+      images: ["forgeupload/dashboard.png", "forgeupload/upload.png"],
       technologies: [
         "React",
         "TypeScript",

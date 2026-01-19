@@ -5,7 +5,7 @@ import { XIcon, Maximize2, Minimize2 } from "lucide-react";
 
 const ImgViewer = () => {
   const { showImgDialog, imgURL, setShowImgDialog } = useImgStore();
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(true);
 
   return (
     <Dialog open={showImgDialog} onOpenChange={setShowImgDialog}>
