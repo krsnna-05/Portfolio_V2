@@ -206,7 +206,7 @@ const Projects = () => {
                       setShowImgDialog(true);
                     }}
                   />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300 pointer-events-none" />
                 </div>
 
                 {/* Multiple Smaller Images */}

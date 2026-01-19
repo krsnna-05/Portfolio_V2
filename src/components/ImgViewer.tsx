@@ -9,55 +9,54 @@ const ImgViewer = () => {
 
   return (
     <Dialog open={showImgDialog} onOpenChange={setShowImgDialog}>
-      <DialogContent
-        className={`border-0 bg-black/90 shadow-2xl p-0 ${
-          isFullscreen
-            ? " w-screen h-screen rounded-none"
-            : "max-w-4xl w-[95vw] h-auto rounded-xl"
-        }`}
-      >
-        <div className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden">
-          {/* Background gradient effect */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 pointer-events-none z-10" />
+      <DialogContent>
+        {isFullscreen ? (
+          // Fullscreen layout
+          <div className="fixed inset-0 bg-black/90 flex flex-col items-center justify-center">
+            {/* Background gradient */}
+            <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-black/20 pointer-events-none z-10" />
 
-          {/* Image container */}
-          <div
-            className={`relative flex items-center justify-center overflow-auto ${
-              isFullscreen ? "w-full h-screen" : "w-full max-h-[80vh] py-8"
-            }`}
-          >
+            {/* Image */}
             {imgURL && (
               <img
                 src={imgURL}
                 alt="Image Viewer"
-                className={`object-contain drop-shadow-2xl transition-transform duration-300 ${
-                  isFullscreen
-                    ? "max-h-screen max-w-screen"
-                    : "max-h-[75vh] max-w-full"
-                }`}
+                className="relative z-20 max-h-[90vh] max-w-[95vw] object-contain drop-shadow-2xl"
               />
             )}
           </div>
+        ) : (
+          // Normal layout
+          <div className="flex flex-col items-center justify-center w-full">
+            {/* Background gradient */}
+            <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-black/20 pointer-events-none z-10" />
 
-          {/* Close button */}
-          <DialogClose className="absolute top-4 right-4 z-50 rounded-full bg-white/15 hover:bg-white/25 p-2.5 transition-all duration-200 backdrop-blur-sm hover:scale-110 md:top-6 md:right-6">
-            <XIcon className="w-5 h-5 text-white md:w-6 md:h-6" />
-            <span className="sr-only">Close</span>
-          </DialogClose>
+            {/* Image container */}
+            <div className="relative z-20 flex items-center justify-center w-full max-h-[80vh] py-8">
+              {imgURL && (
+                <img
+                  src={imgURL}
+                  alt="Image Viewer"
+                  className="max-h-[75vh] max-w-full object-contain drop-shadow-2xl transition-transform duration-300"
+                />
+              )}
+            </div>
 
-          {/* Fullscreen toggle button */}
-          <button
-            onClick={() => setIsFullscreen(!isFullscreen)}
-            className="absolute top-4 right-16 z-50 rounded-full bg-white/15 hover:bg-white/25 p-2.5 transition-all duration-200 backdrop-blur-sm hover:scale-110 md:top-6 md:right-20"
-            title={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
-          >
-            {isFullscreen ? (
-              <Minimize2 className="w-5 h-5 text-white md:w-6 md:h-6" />
-            ) : (
+            {/* Controls */}
+            <DialogClose className="absolute top-4 right-4 z-50 rounded-full bg-white/15 hover:bg-white/25 p-2.5 transition-all duration-200 backdrop-blur-sm hover:scale-110 md:top-6 md:right-6">
+              <XIcon className="w-5 h-5 text-white md:w-6 md:h-6" />
+              <span className="sr-only">Close</span>
+            </DialogClose>
+
+            <button
+              onClick={() => setIsFullscreen(true)}
+              className="absolute top-4 right-16 z-50 rounded-full bg-white/15 hover:bg-white/25 p-2.5 transition-all duration-200 backdrop-blur-sm hover:scale-110 md:top-6 md:right-20"
+              title="Enter fullscreen"
+            >
               <Maximize2 className="w-5 h-5 text-white md:w-6 md:h-6" />
-            )}
-          </button>
-        </div>
+            </button>
+          </div>
+        )}
       </DialogContent>
     </Dialog>
   );
