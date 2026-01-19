@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import useImgStore from "../../imgStore";
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
-import { XIcon, Maximize2, Minimize2 } from "lucide-react";
+import { XIcon, Maximize2 } from "lucide-react";
 
 const ImgViewer = () => {
   const { showImgDialog, imgURL, setShowImgDialog } = useImgStore();
