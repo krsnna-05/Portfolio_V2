@@ -4,11 +4,8 @@ import { Separator } from "../ui/separator";
 import GithubStatsCard from "./GithubStatsCard";
 import NavigationMenu from "./NavigationMenu";
 import MobileNavigationMenu from "./MobileNavigationMenu";
-import useNavigationStore from "../../navigationStore";
 
 const Home = () => {
-  const { setState } = useNavigationStore();
-
   return (
     <>
       {/* Desktop - Left Sidebar */}
@@ -40,9 +37,24 @@ const Home = () => {
 
       {/* Mobile - Full Screen Home */}
       <div className="md:hidden w-full h-screen flex flex-col pb-20">
-        <div className="flex-1 overflow-y-auto flex items-center justify-center">
+        <div className="h-16 border-b border-white/10 flex items-center px-6 justify-between">
+          <div className="flex flex-col">
+            <p className="text-xs font-light tracking-widest text-gray-400">
+              DEVELOPER
+            </p>
+            <p className="text-sm font-light text-white">krsnna-05</p>
+          </div>
+        </div>
+
+        {/* User Info */}
+        <div className="jetbrains-mono dark p-6">
+          <UserAvatar />
           <Me />
         </div>
+
+        <Separator />
+
+        <GithubStatsCard />
         <MobileNavigationMenu />
       </div>
     </>
