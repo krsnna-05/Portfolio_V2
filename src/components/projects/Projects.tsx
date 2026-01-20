@@ -13,7 +13,7 @@ const Projects = () => {
         delayChildren: 0.1,
       },
     },
-  };
+  } as const;
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -25,7 +25,7 @@ const Projects = () => {
         ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
-  };
+  } as const;
 
   const { setImgURL, setShowImgDialog } = useImgStore();
 

@@ -13,11 +13,8 @@ import MobileNavigationMenu from "./components/home/MobileNavigationMenu";
 import UserAvatar from "./components/home/Avatar";
 import Me from "./components/home/Me";
 import GithubStatsCard from "./components/home/GithubStatsCard";
-import useNavigationStore from "./navigationStore";
 
 const DesktopLayout = ({ children }: { children: React.ReactNode }) => {
-  const { state } = useNavigationStore();
-
   return (
     <div className="flex flex-col md:flex-row min-h-screen pb-20 md:pb-0 jetbrains-mono">
       {/* Left Sidebar - Fixed */}

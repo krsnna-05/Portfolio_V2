@@ -12,13 +12,13 @@ const NavigationMenu = () => {
     { label: "About Me", icon: UserIcon, key: "aboutme", path: "/about" },
     { label: "Experience", icon: BriefcaseIcon, key: "exp", path: "/exp" },
     { label: "Projects", icon: Code2, key: "projects", path: "/projects" },
-  ];
+  ] as const;
 
   const currentMenu = menus.findIndex(
     (menu) => menu.path === location.pathname,
   );
 
-  const handleNavigation = (menu: (typeof menus)[0]) => {
+  const handleNavigation = (menu: (typeof menus)[number]) => {
     setState(menu.key);
     navigate(menu.path);
   };

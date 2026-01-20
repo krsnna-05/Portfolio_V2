@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { AnimatePresence } from "motion/react";
 
 interface TypingItem {
@@ -27,7 +27,7 @@ export const TypingAnimation = ({
   const currentWord = currentItem.text;
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
+    let timer: ReturnType<typeof setTimeout>;
 
     const handleTyping = () => {
       const isCurrentWordComplete = displayedText === currentWord;

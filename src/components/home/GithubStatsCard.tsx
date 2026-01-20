@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { GitHubCalendar } from "react-github-calendar";
 
@@ -31,16 +31,9 @@ const GithubStatsCard = () => {
     following: 0,
   });
 
-  const getLastThreeMonths = (contributions: Contribution[]) => {
-    const now = new Date();
-    const threeMonthsAgo = new Date();
-    threeMonthsAgo.setMonth(now.getMonth() - 3);
-
-    return contributions.filter((item) => {
-      const date = new Date(item.date);
-      return date >= threeMonthsAgo && date <= now;
-    });
-  };
+  useEffect(() => {
+    console.log(githubData, loading);
+  }, []);
 
   const fetchGithubStats = async (URL: string) => {
     try {

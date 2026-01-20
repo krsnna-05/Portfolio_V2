@@ -24,7 +24,7 @@ const Exp = () => {
         ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
-  };
+  } as const;
 
   const experiences = [
     {
@@ -100,7 +100,7 @@ const Exp = () => {
       {/* Intro Section */}
       <motion.div className="mb-16" variants={itemVariants}>
         <div className="flex items-start gap-3 mb-4">
-          <Zap size={20} className="text-blue-400 mt-1 flex-shrink-0" />
+          <Zap size={20} className="text-blue-400 mt-1 shrink-0" />
           <div>
             <h3 className="text-xl font-light text-white mb-2">
               Professional Journey
@@ -118,14 +118,14 @@ const Exp = () => {
 
       {/* Experience Timeline */}
       <motion.div className="space-y-6 mb-16" variants={itemVariants}>
-        {experiences.map((exp, idx) => (
+        {experiences.map((exp, _) => (
           <motion.div
             key={exp.company}
             className="group relative"
             variants={itemVariants}
           >
             {/* Card */}
-            <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur border border-white/10 rounded-xl p-6 md:ml-8 hover:border-white/20 transition-all duration-300 group-hover:bg-white/[0.08]">
+            <div className="bg-linear-to-br from-white/5 to-white/2 backdrop-blur border border-white/10 rounded-xl p-6 md:ml-8 hover:border-white/20 transition-all duration-300 group-hover:bg-white/8">
               {/* Header */}
               <div className="flex items-start justify-between gap-4 mb-3">
                 <div className="flex-1">
@@ -155,7 +155,7 @@ const Exp = () => {
                   >
                     <ArrowRight
                       size={16}
-                      className="text-green-400 mt-1 flex-shrink-0"
+                      className="text-green-400 mt-1 shrink-0"
                     />
                     <span>{achievement}</span>
                   </div>
@@ -167,7 +167,7 @@ const Exp = () => {
                 {exp.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="text-xs bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-white/10 rounded-full px-3 py-1 text-gray-200 font-light hover:border-white/20 transition-colors"
+                    className="text-xs bg-linear-to-r from-blue-500/20 to-purple-500/20 border border-white/10 rounded-full px-3 py-1 text-gray-200 font-light hover:border-white/20 transition-colors"
                   >
                     {tech}
                   </span>
@@ -193,12 +193,12 @@ const Exp = () => {
           { label: "Roles", value: "2" },
           { label: "Projects", value: "7+" },
           { label: "Technologies", value: "10+" },
-        ].map((stat, idx) => (
+        ].map((stat, _) => (
           <div
             key={stat.label}
-            className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur border border-white/10 rounded-lg p-4 text-center hover:border-white/20 transition-colors"
+            className="bg-linear-to-br from-white/5 to-white/2 backdrop-blur border border-white/10 rounded-lg p-4 text-center hover:border-white/20 transition-colors"
           >
-            <p className="text-3xl md:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-2">
+            <p className="text-3xl md:text-4xl font-light text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-400 mb-2">
               {stat.value}
             </p>
             <p className="text-sm text-gray-400 font-light">{stat.label}</p>
@@ -208,7 +208,7 @@ const Exp = () => {
 
       {/* What I'm Looking For */}
       <motion.div
-        className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 backdrop-blur border border-white/10 rounded-xl p-6 mb-20 md:p-8"
+        className="bg-linear-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 backdrop-blur border border-white/10 rounded-xl p-6 mb-20 md:p-8"
         variants={itemVariants}
       >
         <h3 className="text-xl font-light text-white mb-4 flex items-center gap-2">

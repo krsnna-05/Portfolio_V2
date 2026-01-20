@@ -22,6 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["vite.config.ts"],
-  "exclude": ["src/components/GradualBlur.tsx"]
+  "include": ["vite.config.ts"]
 }

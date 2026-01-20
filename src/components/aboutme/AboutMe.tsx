@@ -12,7 +12,7 @@ const AboutMe = () => {
         delayChildren: 0.1,
       },
     },
-  };
+  } as const;
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -24,7 +24,7 @@ const AboutMe = () => {
         ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
-  };
+  } as const;
 
   return (
     <motion.div
@@ -134,7 +134,7 @@ const AboutMe = () => {
             "AWS",
           ].map((tech, idx) => (
             <motion.div
-              key={tech}
+              key={idx}
               className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-white/10 rounded-lg px-4 py-2 text-center text-sm font-light text-gray-200 hover:border-white/20 transition-colors"
               variants={itemVariants}
             >

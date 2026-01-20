@@ -4,7 +4,7 @@ import useNavigationStore from "../../navigationStore";
 import { useNavigate, useLocation } from "react-router";
 
 const MobileNavigationMenu = () => {
-  const { state, setState } = useNavigationStore();
+  const { setState } = useNavigationStore();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -13,13 +13,13 @@ const MobileNavigationMenu = () => {
     { label: "About Me", icon: UserIcon, key: "aboutme", path: "/about" },
     { label: "Experience", icon: BriefcaseIcon, key: "exp", path: "/exp" },
     { label: "Projects", icon: Code2, key: "projects", path: "/projects" },
-  ];
+  ] as const;
 
   const currentMenu = mobileMenus.findIndex(
     (menu) => menu.path === location.pathname,
   );
 
-  const handleNavigation = (menu: (typeof mobileMenus)[0]) => {
+  const handleNavigation = (menu: (typeof mobileMenus)[number]) => {
     setState(menu.key);
     navigate(menu.path);
   };

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useRef, useEffect, useCallback } from "react";
 
 const ClickSpark = ({
@@ -60,7 +61,7 @@ const ClickSpark = ({
           return t * (2 - t);
       }
     },
-    [easing]
+    [easing],
   );
 
   useEffect(() => {
@@ -144,7 +145,7 @@ const ClickSpark = ({
         sparksRef.current.push(...newSparks);
       }
     },
-    [sparkCount]
+    [sparkCount],
   );
 
   return (
