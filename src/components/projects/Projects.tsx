@@ -75,12 +75,7 @@ const Projects = () => {
       title: "KrishiSahayak",
       description:
         "KrishiSahayak is an AI-based agricultural assistant that recommends suitable crops based on location, soil, and weather, and answers farmer queries through a chatbot using both cloud and local AI models.",
-      images: [
-        "/project3-1.jpg",
-        "/project3-2.jpg",
-        "/project3-3.jpg",
-        "/project3-4.jpg",
-      ],
+      images: ["/krishisahayak/home.png", "/krishisahayak/chat.png"],
       technologies: [
         "React",
         "TypeScript",
