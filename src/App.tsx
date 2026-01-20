@@ -30,6 +30,9 @@ const DesktopLayout = ({ children }: { children: React.ReactNode }) => {
             </p>
             <p className="text-sm font-light text-white">krsnna-05</p>
           </div>
+          <div className=" bg-white text-black hover:scale-105 rounded-lg px-3 py-1 text-base font-light cursor-pointer select-none transition-all">
+            Resume
+          </div>
         </div>
 
         {/* User Info */}

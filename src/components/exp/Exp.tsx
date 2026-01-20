@@ -82,7 +82,7 @@ const Exp = () => {
       <motion.img
         src="/exp.jpg"
         alt="Experience"
-        className="w-full aspect-video md:aspect-4/1 rounded-xl mb-8 object-cover border border-white/20"
+        className="w-full aspect-video md:aspect-4/1 rounded-xl mb-8 object-cover border border-white/20 md:hidden"
         style={{ objectPosition: "0px 0px" }}
         variants={itemVariants}
       />

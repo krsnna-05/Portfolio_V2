@@ -168,7 +168,7 @@ const Projects = () => {
       <motion.img
         src="/projects.jpg"
         alt="Projects"
-        className="w-full aspect-video md:aspect-4/1 rounded-xl mb-8 object-cover border border-white/20"
+        className="w-full aspect-video md:aspect-4/1 rounded-xl mb-8 object-cover border border-white/20 md:hidden"
         style={{ objectPosition: "0px 0px" }}
         variants={itemVariants}
       />
