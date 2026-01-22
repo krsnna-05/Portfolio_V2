@@ -3,7 +3,6 @@ import Me from "./Me";
 import { Separator } from "../ui/separator";
 import GithubStatsCard from "./GithubStatsCard";
 import NavigationMenu from "./NavigationMenu";
-import MobileNavigationMenu from "./MobileNavigationMenu";
 
 const Home = () => {
   return (
@@ -61,7 +60,6 @@ const Home = () => {
         <Separator />
 
         <GithubStatsCard />
-        <MobileNavigationMenu />
       </div>
     </>
   );

@@ -85,7 +85,14 @@ const App = () => {
         <DesktopRedirect />
         <Routes>
           {/* Home route - shows home on mobile, redirects to /about on desktop */}
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <DesktopLayout>
+                <Home />
+              </DesktopLayout>
+            }
+          />
 
           {/* About route - shows in desktop layout */}
           <Route
