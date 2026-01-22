@@ -25,11 +25,11 @@ const MobileNavigationMenu = () => {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 md:hidden bg-black backdrop-blur border-t border-white/10">
+    <div className="fixed bottom-0 left-0 right-0 md:hidden bg-black backdrop-blur border-t border-white/10 p-3">
       <div className="relative flex gap-1 p-1 justify-between">
         {/* Animated background pill */}
         <motion.div
-          className="absolute top-1 bottom-1 bg-white/10 rounded-md"
+          className="absolute top-1 bottom-1 bg-white rounded-md"
           layoutId="mobile-nav-bg"
           initial={false}
           transition={{ type: "spring", stiffness: 380, damping: 30 }}
@@ -44,9 +44,9 @@ const MobileNavigationMenu = () => {
           <motion.button
             key={menu.label}
             onClick={() => handleNavigation(menu)}
-            className={`relative flex-1 px-2 py-3 text-xs font-light rounded-md transition-colors text-center flex flex-col items-center gap-1 ${
+            className={`relative flex-1 px-2 py-2 text-xs font-light rounded-md transition-colors text-center flex flex-col items-center gap-1 ${
               currentMenu === idx
-                ? "text-white"
+                ? "text-black"
                 : "text-gray-400 hover:text-gray-200"
             }`}
             whileHover={{ scale: 1.02 }}
