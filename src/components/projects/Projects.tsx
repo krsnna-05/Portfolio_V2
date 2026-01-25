@@ -1,4 +1,4 @@
-import { Code2Icon, Play, Github } from "lucide-react";
+import { Code2Icon, Play, Github, Globe } from "lucide-react";
 import { motion } from "motion/react";
 import GradualBlur from "../GradualBlur";
 import useImgStore from "../../../imgStore";
@@ -49,7 +49,8 @@ const Projects = () => {
         "Ollama",
       ],
       demoLink: "#",
-      githubLink: "#",
+      githubLink: "https://github.com/krsnna-05/FastForms",
+      liveLink: "#",
     },
     {
       title: "Feedback Collection and Analysis System : GHRCEM CS&DS",
@@ -69,7 +70,8 @@ const Projects = () => {
         "Vercel",
       ],
       demoLink: "#",
-      githubLink: "#",
+      githubLink: "https://github.com/krsnna-05/ghrcem-csds-feedback-platform",
+      liveLink: "https://ghrcem-csds-feedback-platform.vercel.app/app-info",
     },
     {
       title: "KrishiSahayak",
@@ -85,7 +87,8 @@ const Projects = () => {
         "MongoDB",
       ],
       demoLink: "#",
-      githubLink: "#",
+      githubLink: "https://github.com/krsnna-05/KrishiSahayak",
+      liveLink: "#",
     },
     {
       title: "TypeStrike",
@@ -99,9 +102,12 @@ const Projects = () => {
         "Node.js",
         "Express",
         "MongoDB",
+        "GCP",
+        "Nginx",
       ],
       demoLink: "#",
-      githubLink: "#",
+      githubLink: "https://github.com/krsnna-05/TypeStrike",
+      liveLink: "https://www.typestrike.tech",
     },
     {
       title: "ForgeUpload",
@@ -118,29 +124,8 @@ const Projects = () => {
         "Express",
       ],
       demoLink: "#",
-      githubLink: "#",
-    },
-    {
-      title: "Chitrush",
-      description:
-        "Chitrush is a real-time multiplayer card game supporting up to 8 players, built to strengthen backend logic and WebSocket-based communication for synchronized gameplay.",
-      images: [
-        "/project3-1.jpg",
-        "/project3-2.jpg",
-        "/project3-3.jpg",
-        "/project3-4.jpg",
-      ],
-      technologies: [
-        "React",
-        "TypeScript",
-        "Socket.IO",
-        "Node.js",
-        "Express",
-        "Redis",
-        "Upstash",
-      ],
-      demoLink: "#",
-      githubLink: "#",
+      githubLink: "https://github.com/krsnna-05/ForgeUpload",
+      liveLink: "#",
     },
   ];
 
@@ -253,25 +238,44 @@ const Projects = () => {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex gap-3">
-                  <motion.a
-                    href={project.demoLink}
-                    className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-lg font-light hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Play size={16} />
-                    Demo Video
-                  </motion.a>
-                  <motion.a
-                    href={project.githubLink}
-                    className="flex items-center gap-2 px-4 py-2 border border-white/20 text-white rounded-lg font-light hover:bg-white/5 hover:border-white/40 transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Github size={16} />
-                    Code
-                  </motion.a>
+                <div className="flex gap-3 flex-wrap">
+                  {project.liveLink !== "#" && (
+                    <motion.a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg font-light hover:shadow-lg hover:shadow-green-500/50 transition-all duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Globe size={16} />
+                      Live
+                    </motion.a>
+                  )}
+
+                  {project.demoLink !== "#" && (
+                    <motion.a
+                      href={project.demoLink}
+                      className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-lg font-light hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Play size={16} />
+                      Demo Video
+                    </motion.a>
+                  )}
+
+                  {project.githubLink !== "#" && (
+                    <motion.a
+                      href={project.githubLink}
+                      className="flex items-center gap-2 px-4 py-2 border border-white/20 text-white rounded-lg font-light hover:bg-white/5 hover:border-white/40 transition-all duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Github size={16} />
+                      Code
+                    </motion.a>
+                  )}
                 </div>
               </div>
             </div>
