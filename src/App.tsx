@@ -31,7 +31,7 @@ const DesktopLayout = ({ children }: { children: React.ReactNode }) => {
             className=" bg-white text-black hover:scale-105 rounded-lg px-3 py-1 text-base font-light cursor-pointer select-none transition-all"
             onClick={() =>
               window.open(
-                "https://drive.google.com/file/d/177Mj_qRYZ0eSbGpFql96SR2RIM-bVAOR/view?usp=sharing",
+                "https://drive.google.com/file/d/1xF6m6AaebS287aBzzIJ42kkcZhi-7e7b/view?usp=sharing",
                 "_blank",
               )
             }
